@@ -14,7 +14,7 @@ sudo mkdir -p /etc/facter/facts.d
 export no_proxy="127.0.0.1,169.254.169.254,localhost,consul,jiocloud.com"
 export http_proxy=${http_proxy} 
 export https_proxy=${http_proxy}
-iecho no_proxy="'127.0.0.1,localhost,consul'" >> /etc/environment
+echo no_proxy="'127.0.0.1,localhost,consul'" >> /etc/environment
 echo http_proxy="'${http_proxy}'" >> /etc/environment
 echo https_proxy="'${https_proxy}'" >> /etc/environment
 /bin/bash -c 'sudo echo "deb http://10.140.221.229/apt/JcsDSS/JcsDSS jiocloud main" | sudo tee -a /etc/apt/sources.list'
