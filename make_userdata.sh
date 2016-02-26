@@ -14,10 +14,10 @@ sudo mkdir -p /etc/facter/facts.d
 export no_proxy="127.0.0.1,169.254.169.254,localhost,consul,jiocloud.com"
 export http_proxy=${http_proxy} 
 export https_proxy=${http_proxy}
-echo no_proxy="'127.0.0.1,169.254.169.254,localhost,consul,jiocloud.com'" >> /etc/environment
+echo no_proxy="'127.0.0.1,localhost,consul'" >> /etc/environment
 echo http_proxy="'${http_proxy}'" >> /etc/environment
 echo https_proxy="'${https_proxy}'" >> /etc/environment
-/bin/bash -c 'sudo echo "deb http://10.140.221.229/apt/bafna/bafna jiocloud main" | sudo tee -a /etc/apt/sources.list'
+/bin/bash -c 'sudo echo "deb http://10.140.221.229/apt/JcsDSS/JcsDSS jiocloud main" | sudo tee -a /etc/apt/sources.list'
 /bin/bash -c 'sudo echo "deb http://10.140.221.229/mirrors/mirrors/42/jiocloud.rustedhalo.com/ubuntu/ trusty main" | sudo tee -a /etc/apt/sources.list'
 /bin/bash -c 'sudo echo "deb http://apt.puppetlabs.com trusty main" | sudo tee -a /etc/apt/sources.list'
 /bin/bash -c 'sudo echo "deb-src http://apt.puppetlabs.com trusty main" | sudo tee -a /etc/apt/sources.list'
@@ -30,7 +30,7 @@ apt-get update
 n=0
 while [ \$n -le 6 ]
 do
-  apt-get install --force-yes -y puppet-dss hiera ruby puppet software-properties-common jiocloud-ssl-certificate && break
+  apt-get install --force-yes -y puppet-dss hiera ruby puppet software-properties-common && break
   n=\$((\$n+1))
   sleep 5
 done
