@@ -11,11 +11,11 @@ For deployment of fresh cluster
 To clean old cluster 
 
 1. Run list_machines.sh , list_mon.sh, list_st.sh.
-2. Run remove_puppet.sh using transfer_run_background_script.sh on all the machines listed in 
+2. Run remove_puppet.sh using transfer_run_background_script.sh on all the machines listed in : 
     transfer_run_background_script.sh remove_puppet.sh all_machines.txt
-3. Clean mons
+3. Clean mons:
     transfer_run_background_script.sh clean_mon.sh all_mon.txt 
-4.  Clean st
+4.  Clean st:
     transfer_run_background_script.sh clean_st.sh  all_st.txt
 
 You should have ssh pwdless access to all the machines for the above to work. 
